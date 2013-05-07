@@ -24,7 +24,7 @@ module.exports = Popover;
 function Popover(content, title) {
   this.popover = o(require('./template'));
   Tip.call(this, this.popover);
-  this.classname = 'popover';
+  this.classname = 'virtru-popover';
   this.el.addClass('popover');
   if (title) this.title(title)
   else this.hideTitle();
@@ -47,7 +47,7 @@ inherit(Popover, Tip);
  */
 
 Popover.prototype.content = function(content){
-  this.popover.find('.popover-content').empty().append(content);
+  this.popover.find('.virtru-popover-content').empty().append(content);
   return this;
 };
 
@@ -60,7 +60,7 @@ Popover.prototype.content = function(content){
  */
 
 Popover.prototype.title = function(title){
-  this.popover.find('.popover-title').empty().append(title);
+  this.popover.find('.virtru-popover-title').empty().append(title);
   return this;
 };
 
@@ -72,6 +72,6 @@ Popover.prototype.title = function(title){
  */
 
 Popover.prototype.hideTitle = function(){
-  this.popover.find('.popover-title').remove();
+  this.popover.find('.virtru-popover-title').remove();
   return this;
 };
