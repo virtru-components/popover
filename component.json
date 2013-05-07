@@ -1,6 +1,7 @@
 {
-  "name": "popover",
-  "description": "Popover component",
+  "name": "virtru-popover",
+  "repo": "virtru/popover",
+  "description": "Virtru Popover component",
   "version": "1.0.0",
   "keywords": ["toolpopover", "popover", "ui"],
   "dependencies": {
