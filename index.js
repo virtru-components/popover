@@ -2,9 +2,9 @@
  * Module dependencies.
  */
 
-var Tip = require('tip')
-  , o = require('jquery')
-  , inherit = require('inherit');
+var Tip = require('tip');
+var $ = require('jquery');
+var inherit = require('inherit');
 
 /**
  * Expose `Popover`.
@@ -22,14 +22,21 @@ module.exports = Popover;
  */
 
 function Popover(content, title) {
-  this.popover = o(require('./template'));
+  this.popover = $(require('./template'));
   Tip.call(this, this.popover);
   this.classname = 'virtru-popover';
-  this.el.addClass('popover');
-  if (title) this.title(title)
-  else this.hideTitle();
+  $(this.el).addClass('popover');
+
+  if (title) {
+    this.title(title)
+  } else {
+    this.hideTitle();
+  }
+
   this.content(content);
-  if (Popover.effect) this.effect(Popover.effect);
+  if (Popover.effect) {
+    this.effect(Popover.effect);
+  }
 }
 
 /**
