@@ -5,9 +5,9 @@
   "version": "1.0.0",
   "keywords": ["toolpopover", "popover", "ui"],
   "dependencies": {
-    "component/tip": "*",
-    "component/jquery": "*",
-    "component/inherit": "*"
+    "component/tip": "0.3.0",
+    "component/jquery": "1.9.1",
+    "component/inherit": "0.0.2"
   },
   "development": {
     "component/aurora-popover": "*"
