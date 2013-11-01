@@ -82,3 +82,66 @@ Popover.prototype.hideTitle = function(){
   this.popover.find('.virtru-popover-title').remove();
   return this;
 };
+
+/**
+ * Sets a delay for showing tooltips
+ *
+ * @param {Number} ms
+ * @return {Tip}
+ * @api public
+ */
+
+Popover.prototype.setShowTimer = function(ms) {
+  this.showDelay = ms;
+  return this;
+};
+
+/**
+ * Hide the tip with optional `ms` delay.
+ *
+ * Emits "hide" event.
+ *
+ * @param {Number} ms
+ * @return {Tip}
+ * @api public
+ */
+
+Popover.prototype.hide = function(ms){
+  // clear the show timer
+  if(this._showTimer) {
+    clearTimeout(this._showTimer);
+  }
+
+  // continue normally
+  Tip.prototype.hide.call(this, ms);
+  return this;
+};
+
+/**
+ * Sets up a delay before actually showing the tooltip
+ *
+ * @param {String|Element|Number} el or x
+ * @param {Number} [y]
+ * @return {Tip}
+ * @api public
+ */
+
+Popover.prototype.show = function(el){
+  if(this.showDelay) {
+    // if timer already exists, get rid of it
+    if(this._showTimer) {
+      clearTimeout(this._showTimer);
+    }
+
+    // set a delay for showing the popover
+    var self = this;
+    this._showTimer = setTimeout(function() {
+      Tip.prototype.show.call(self, el);
+    }, this.showDelay);
+    return this;
+  }
+
+  // show the popover
+  Tip.prototype.show.call(this, el);
+  return this;
+};
