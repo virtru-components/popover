@@ -6,6 +6,10 @@ var Tip = require('tip');
 var $ = require('jquery');
 var inherit = require('inherit');
 
+// default delay for showing the tooltip on mouseover
+var DEFAULT_SHOW_DELAY = 500;
+
+
 /**
  * Expose `Popover`.
  */
@@ -86,12 +90,15 @@ Popover.prototype.hideTitle = function(){
 /**
  * Sets a delay for showing tooltips
  *
- * @param {Number} ms
+ * @param {Number} ms (optional)
  * @return {Tip}
  * @api public
  */
 
 Popover.prototype.setShowTimer = function(ms) {
+  if(!ms && ms !== 0) {
+    ms = DEFAULT_SHOW_DELAY;
+  }
   this.showDelay = ms;
   return this;
 };
