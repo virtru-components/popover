@@ -41,6 +41,8 @@ function Popover(content, title) {
   if (Popover.effect) {
     this.effect(Popover.effect);
   }
+
+  this.enable();
 }
 
 /**
@@ -134,6 +136,10 @@ Popover.prototype.hide = function(ms){
  */
 
 Popover.prototype.show = function(el){
+  if(!this.enabled) {
+    return;
+  }
+
   if(this.showDelay) {
     // if timer already exists, get rid of it
     if(this._showTimer) {
@@ -151,4 +157,14 @@ Popover.prototype.show = function(el){
   // show the popover
   Tip.prototype.show.call(this, el);
   return this;
+};
+
+// enables the popover
+Popover.prototype.enable = function() {
+  this.enabled = true;
+};
+
+// disables the popover
+Popover.prototype.disable = function() {
+  this.enabled = false;
 };
