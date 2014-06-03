@@ -2,11 +2,11 @@
   "name": "virtru-popover",
   "repo": "virtru/popover",
   "description": "Virtru Popover component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": ["toolpopover", "popover", "ui"],
   "dependencies": {
-    "component/tip": "0.2.1",
-    "component/jquery": "1.9.1",
+    "virtru-components/tip": "0.2.1",
+    "components/jquery": "1.9.1",
     "component/inherit": "0.0.2"
   },
   "development": {
