@@ -5,7 +5,7 @@
   "version": "1.0.4",
   "keywords": ["toolpopover", "popover", "ui"],
   "dependencies": {
-    "virtru-components/tip": "0.2.2",
+    "virtru-components/tip": "0.2.3",
     "virtru-components/jquery": "2.1.0",
     "component/inherit": "0.0.2"
   },
