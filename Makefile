@@ -6,7 +6,7 @@ template.js: template.html
 	@component convert $<
 
 components:
-	@component install  --dev
+	@component proxy-install  --dev
 
 clean:
 	rm -fr build components
