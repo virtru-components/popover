@@ -3,8 +3,9 @@
   "description": "Virtru Popover component",
   "version": "1.1.0",
   "dependencies": {
-    "tip": "git+ssh://git@github.com:virtru-components/tip.git#0.2.5",
-    "jquery": "2.1.0"
+    "component-tip": "2.4.1",
+    "jquery": "2.1.0",
+    "component-inherit": "0.0.3"
   },
   "development": {
     "popover-component": "*"
